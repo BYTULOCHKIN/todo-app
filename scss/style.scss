@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  // background-image: linear-gradient(120deg, #7d2e8560, darkslateblue);
+  background-repeat: no-repeat;
+  padding: 0 10px;
+}
+.container {
+  max-width: 1130px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+}
+li {
+  list-style-type: none;
+}
+
+.todo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  &__input {
+    padding-left: 2px;
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+    background-color: #fff;
+  }
+  &__button {
+    margin-left: 30px;
+    width: 80px;
+    line-height: 25px;
+    display: block;
+    background-color: #0097f4;
+    border: none;
+    outline: none;
+    color: wheat;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(150, 60, 202);
+    }
+  }
+  &-list {
+    width: 100%;
+    margin: auto;
+    padding: 0;
+  }
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+  &-item {
+    padding: 5px;
+    display: flex;
+    background-color: #fff;
+    margin: 10px;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+    & li {
+      flex: 1;
+    }
+  }
+
+  &__text {
+    display: block;
+    text-align: left;
+    max-width: 1008px;
+  }
+}
+
+.done {
+  background-color: brown;
+}
+
+.done__btn,
+.delete__btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 3px;
+  background-color: darkslateblue;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.complete {
+  background-color: rgba(100, 101, 104, 0.8);
+  text-decoration: line-through;
+  .done__btn {
+    background-color: rgba(100, 101, 104, 0.8);
+  }
+}
+.delete__btn:hover {
+  background-color: darkred;
+}
+
+.fa-check,
+.fa-trash-alt {
+  pointer-events: none;
+}
+
+// FILTER
+select {
+  appearance: none;
+  outline: none;
+  border: none;
+  color: orangered;
+  cursor: pointer;
+  width: 30px;
+  padding: 6px;
+  margin-left: 10px;
+  background-color: rgb(255, 255, 255);
+}
+.select {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0b0";
+    color: yellowgreen;
+    position: absolute;
+    padding: 5px;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    background-color: #111;
+    transition: all 0.3s ease;
+  }
+  &:hover:after {
+    background: white;
+    color: orangered;
+  }
+}

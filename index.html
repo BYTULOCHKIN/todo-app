@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-DO</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>TODO LIST</h1>
+      <div class="todo">
+        <form class="todo todo__form" action="">
+          <input
+            type="text"
+            class="todo__input"
+            placeholder="Task"
+            maxlength="240"
+          />
+          <button type="button" class="todo__button" type="submit">ADD</button>
+          <div class="select">
+            <select name="todos" id="filter-done" class="filter-todo">
+              <i class="fas fa-filter">
+                <option value="all">All</option>
+                <option value="complete">Complete</option>
+                <option value="notcomplete">Not completed</option></i
+              >
+            </select>
+          </div>
+        </form>
+      </div>
+      <!--   <button class="done">
+        <i class="fas fa-check"></i>
+      </button>  -->
+      <div class="todo-container">
+        <ul class="todo-list"></ul>
+      </div>
+
+      <div class="modal-edit"></div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
