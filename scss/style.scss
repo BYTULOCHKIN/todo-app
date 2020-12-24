@@ -1,3 +1,4 @@
+@import "./login";
 * {
   padding: 0;
   margin: 0;
@@ -5,10 +6,14 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #fff;
+  background: linear-gradient(
+    90deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
   // background-image: linear-gradient(120deg, #7d2e8560, darkslateblue);
   background-repeat: no-repeat;
-  padding: 0 10px;
+  min-height: 100vh;
 }
 .container {
   max-width: 1130px;
@@ -25,6 +30,7 @@ li {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  padding: 0 10px;
   &__input {
     padding-left: 2px;
     width: 100%;
@@ -32,7 +38,7 @@ li {
     border: none;
     border-bottom: 1px solid grey;
     outline: none;
-    background-color: #fff;
+    background-color: transparent;
   }
   &__button {
     margin-left: 30px;
@@ -46,7 +52,8 @@ li {
     transition: background-color 0.3s ease;
     cursor: pointer;
     &:hover {
-      background-color: rgb(150, 60, 202);
+      background-color: white;
+      color: #0097f4;
     }
   }
   &-list {
@@ -61,13 +68,26 @@ li {
   &-item {
     padding: 5px;
     display: flex;
-    background-color: #fff;
+    background: linear-gradient(
+      90deg,
+      rgba(242, 133, 180, 1) 0%,
+      rgba(123, 175, 232, 1) 78%,
+      rgba(169, 208, 251, 1) 100%
+    );
     margin: 10px;
-    height: 50px;
     justify-content: space-around;
     align-items: center;
+    animation: new 0.3s ease-in;
+    &.complete {
+      background: linear-gradient(
+        90deg,
+        rgba(63, 76, 87, 1) 0%,
+        rgba(160, 182, 207, 1) 100%
+      );
+    }
     & li {
       flex: 1;
+      max-width: 80%;
     }
   }
 
@@ -82,6 +102,11 @@ li {
   background-color: brown;
 }
 
+.todo-time {
+  font-size: 13px;
+  max-width: 120px;
+}
+
 .done__btn,
 .delete__btn {
   width: 40px;
@@ -94,7 +119,6 @@ li {
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  transition: all 0.3s ease;
 }
 .complete {
   background-color: rgba(100, 101, 104, 0.8);
@@ -117,7 +141,7 @@ select {
   appearance: none;
   outline: none;
   border: none;
-  color: orangered;
+  color: #0097f4;
   cursor: pointer;
   width: 30px;
   padding: 6px;
@@ -132,17 +156,33 @@ select {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     content: "\f0b0";
-    color: yellowgreen;
+    color: white;
     position: absolute;
     padding: 5px;
     top: 0;
     right: 0;
     pointer-events: none;
-    background-color: #111;
-    transition: all 0.3s ease;
+    background-color: #0097f4;
   }
   &:hover:after {
     background: white;
-    color: orangered;
+    color: #0097f4;
+  }
+}
+
+// Animation
+@keyframes new {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-30deg), rotateZ(0deg);
+  }
+}
+
+@media (max-width: 550px) {
+  .todo-time {
+    display: none;
   }
 }

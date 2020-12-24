@@ -18,6 +18,38 @@
     />
   </head>
   <body>
+    <!--Авторизация-->
+    <div class="login">
+      <div class="login__card">
+        <p class="login__title">Введите логин</p>
+        <input
+          class="login__input"
+          type="text"
+          name="log"
+          id="login"
+          placeholder="адрес e-mail"
+        />
+        <p class="login__error">неправильный e-mail</p>
+        <p class="login__title">Введите пароль</p>
+        <input
+          class="login__input"
+          type="password"
+          name="pass"
+          id="pass"
+          placeholder="пароль"
+        />
+        <p class="login__error">неправильный пароль</p>
+        <button
+          class="login__btn"
+          type="submit"
+          value="Подтвердить"
+          id="submitlog"
+        >
+          ВВОЙТИ
+        </button>
+      </div>
+    </div>
+
     <div class="container">
       <h1>TODO LIST</h1>
       <div class="todo">
@@ -39,17 +71,27 @@
             </select>
           </div>
         </form>
+        <div class="modal">
+          <div class="modal__overlay">
+            <div class="modal-window">
+              <div class="modal__header">
+                <i class="fas fa-times"></i>
+              </div>
+
+              <div class="modal__body">
+                <p>Недопустимое значение! Введите хотя бы один символ</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <!--   <button class="done">
-        <i class="fas fa-check"></i>
-      </button>  -->
-      <div class="todo-container">
+      <div id="todo-container" class="todo-container">
         <ul class="todo-list"></ul>
       </div>
 
       <div class="modal-edit"></div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
